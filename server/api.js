@@ -16,7 +16,9 @@ apiRouter.get('/minions', (req, res, next) => {
 //POST /api/minions to create a new minion and save it to the database
 
 apiRouter.post('/minions', (req, res, next) => {
+    console.log('Requested body', req.body);
     const newMinion = addToDatabase('minions', req.body);
+    console.log('New minion', newMinion);
     res.status(201).json(newMinion);
 })
 

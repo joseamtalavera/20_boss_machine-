@@ -82,6 +82,7 @@ const allIdeas = new Array(10).fill(0).map(createIdea);
 const allWork = allMinions.map(minion => createWork(minion.id));
 const allMeetings = new Array(3).fill(0).map(createMeeting);
 
+
 const isValidMinion = (instance) => {
   instance.name = instance.name || '';
   instance.weaknesses = instance.weaknesses || '';
@@ -97,6 +98,28 @@ const isValidMinion = (instance) => {
   }
   return true;
 }
+
+
+
+/*
+const isValidMinion = (instance) => {
+  instance.name = instance.name || '';
+  instance.weaknesses = instance.weaknesses || '';
+  instance.title = instance.title || '';
+  if (typeof instance.name !== 'string' || typeof instance.weaknesses !== 'string'
+  || typeof instance.title !== 'string') {
+    throw new Error('Minion\'s name, title, and weaknesses must be strings');
+  }
+  
+  if (!isNaN(parseFloat(instance.salary)) && isFinite(instance.salary)) {
+    instance.salary = Number(instance.salary);
+  } else {
+    throw new Error('Minion\'s salary must be a number.');
+  }
+  return true;
+}
+
+*/
 
 const isValidIdea = (instance) => {
   instance.name = instance.name || '';
